@@ -1,0 +1,14 @@
+<h2> Add a Restaurant to YELP </h2>
+
+<%= simple_form_for @restaurant do |f| %>
+  <%= f.error_notification %>
+  <%= f.input :name %>
+  <br>
+  <%= f.select :category, %w(japanese belgian french chinese italian), {}, class: 'form-control' %>
+  <br>
+  <%= f.input :address %>
+  <br>
+  <%= f.input :phone_number %>
+  <br>
+  <%= f.submit "add restaurant", class: "btn btn-primary" %>
+<% end %>

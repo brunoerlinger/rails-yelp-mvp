@@ -1,0 +1,20 @@
+<h1>************** YELP **************</h1>
+
+<h2>List of Restaurants</h2>
+
+<%= link_to 'Add a new restaurant', new_restaurant_path, class:"btn btn-primary" %>
+
+<hr>
+
+
+
+<% @restaurants.each do |restaurant| %>
+
+  <h3><%= link_to restaurant.name, restaurant_path(restaurant) %> </h3>
+  <h5>Category: <%= restaurant.category %> </h5>
+  <h5>Phone: <%= restaurant.phone_number %></h5>
+  <h5>Address: <%= restaurant.address %></h5>
+  <br>
+  <%= link_to "Add a review to #{restaurant.name}", new_restaurant_review_path(restaurant), class:"btn btn-danger" %>
+  <hr>
+<% end %>
